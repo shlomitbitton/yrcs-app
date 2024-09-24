@@ -3,14 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {HttpClientModule} from "@angular/common/http";
+import { SponsorListComponent } from './sponsor-list/sponsor-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SponsorListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

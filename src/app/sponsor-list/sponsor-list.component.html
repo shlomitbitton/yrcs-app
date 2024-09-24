@@ -1,0 +1,27 @@
+<h2>Sponsor List</h2>
+<table border="1">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Contact Person</th>
+    <th>Email</th>
+    <th>Phone Number</th>
+    <th>Address</th>
+    <th>Type</th>
+    <th>Notes</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let sponsor of sponsors">
+    <td>{{ sponsor.sponsor_id }}</td>
+    <td>{{ sponsor.name }}</td>
+    <td>{{ sponsor.contact_person }}</td>
+    <td>{{ sponsor.email }}</td>
+    <td>{{ sponsor.phone_number }}</td>
+    <td>{{ sponsor.address }}</td>
+    <td>{{ sponsor.sponsor_type }}</td>
+    <td>{{ sponsor.notes }}</td>
+  </tr>
+  </tbody>
+</table>
