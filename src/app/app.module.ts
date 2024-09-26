@@ -9,12 +9,15 @@ import {FormsModule} from "@angular/forms";
 import { ProgramListComponent } from './program-list/program-list.component';
 import {ProgramService} from "./program.service";
 import {SponsorService} from "./sponsor.service";
+import {SponsorshipService} from "./sponsorship.service";
+import { SponsorshipsComponent } from './sponsorships/sponsorships.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SponsorListComponent,
     ProgramListComponent,
+    SponsorshipsComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,7 @@ import {SponsorService} from "./sponsor.service";
     HttpClientModule,
     FormsModule,
   ],
-  providers: [ProgramService, SponsorService],
+  providers: [ProgramService, SponsorService, SponsorshipService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,30 @@
+<h2>Sponsorships</h2>
+<table>
+  <thead>
+  <tr>
+    <th>Sponsor name</th>
+    <th>Event</th>
+    <th>Amount</th>
+    <th>Notes</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let sponsorship of sponsorships">
+    <td>
+      <input [(ngModel)]="sponsorship.sponsor_name" placeholder="Sponsor" />
+    </td>
+    <td>
+      <input [(ngModel)]="sponsorship.program_name" placeholder="Event" />
+    </td>
+    <td>
+      <input [(ngModel)]="sponsorship.amount" placeholder="Amount" />
+    </td>
+    <td>
+      <input [(ngModel)]="sponsorship.notes"  placeholder="Notes" />
+    </td>
+    <td>
+      <button (click)="updateSponsorship(sponsorship.sponsor_name, sponsorship.program_name, sponsorship.amount,sponsorship.notes, sponsorship.sponsorship_id )">Update</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

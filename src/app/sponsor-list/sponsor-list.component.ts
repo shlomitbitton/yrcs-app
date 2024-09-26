@@ -13,9 +13,6 @@ export class SponsorListComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadPrograms();
-    // this.sponsorService.getSponsors().subscribe((data) => {
-    //   this.sponsors = data;
-    // });
   }
 
   loadPrograms() {
