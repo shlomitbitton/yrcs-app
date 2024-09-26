@@ -1,0 +1,30 @@
+<h2>Fundraiser Events List</h2>
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Host class</th>
+    <th>Estimated Income</th>
+    <th>Event Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let program of programs">
+    <td>
+      <input [(ngModel)]="program.name" placeholder="Event Name" />
+    </td>
+    <td>
+      <input [(ngModel)]="program.host_class" placeholder="Host class" />
+    </td>
+    <td>
+      <input [(ngModel)]="program.estimated_income" placeholder="Estimated Income" />
+    </td>
+    <td>
+      <input [(ngModel)]="program.event_date"  placeholder="Event Date" />
+    </td>
+    <td>
+      <button (click)="updateProgram(program.name, program.host_class, program. estimated_income,program.event_date, program.program_id )">Update</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

@@ -12,8 +12,37 @@ export class SponsorListComponent implements OnInit {
   constructor(private sponsorService: SponsorService) {}
 
   ngOnInit(): void {
-    this.sponsorService.getSponsors().subscribe((data) => {
-      this.sponsors = data;
+    this.loadPrograms();
+    // this.sponsorService.getSponsors().subscribe((data) => {
+    //   this.sponsors = data;
+    // });
+  }
+
+  loadPrograms() {
+    this.sponsorService.getSponsors().subscribe({
+      next: (data) => {
+        this.sponsors = data;
+      },
+      error: (error) => {
+        console.error('Error fetching programs:', error);
+      }
     });
   }
+
+
+
+  updateSponsor(name: string, contact_person: string, email: string, phone_number: string, notes: string, sponsorId: number) {
+    this.sponsorService.updateSponsor(name, contact_person, email, phone_number, notes, sponsorId).subscribe({
+      next: (response) => {
+        console.log('Sponsor updated:', response);
+        alert('Sponsor updated successfully');
+        this.loadPrograms();
+      },
+      error: (error) => {
+        console.error('Error updating sponsor:', error);
+        alert('Error updating sponsor');
+      }
+    });
+  }
+
 }

@@ -24,4 +24,9 @@ export class SponsorService {
   getSponsors(): Observable<Sponsor[]> {
     return this.http.get<Sponsor[]>(this.apiUrl);
   }
+
+
+  updateSponsor(name: string, contact_person: string, email: string, phone_number: string, notes: string, sponsorId: number):Observable<any>{
+    return this.http.put(`${this.apiUrl}/${sponsorId}`, { name, contact_person, email, phone_number, notes });
+  }
 }

@@ -2,26 +2,34 @@
 <table border="1">
   <thead>
   <tr>
-    <th>ID</th>
     <th>Name</th>
     <th>Contact Person</th>
     <th>Email</th>
     <th>Phone Number</th>
-    <th>Address</th>
-    <th>Type</th>
+    <th>Sponsor Type</th>
     <th>Notes</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let sponsor of sponsors">
-    <td>{{ sponsor.sponsor_id }}</td>
-    <td>{{ sponsor.name }}</td>
-    <td>{{ sponsor.contact_person }}</td>
-    <td>{{ sponsor.email }}</td>
-    <td>{{ sponsor.phone_number }}</td>
-    <td>{{ sponsor.address }}</td>
-    <td>{{ sponsor.sponsor_type }}</td>
-    <td>{{ sponsor.notes }}</td>
+    <td><input  [(ngModel)]="sponsor.name" placeholder="Sponsor name" />
+    <td>
+      <input  [(ngModel)]="sponsor.contact_person" placeholder="Contact Person" />
+    </td>
+    <td>
+      <input  [(ngModel)]="sponsor.email" placeholder="Enter email" />
+    </td>
+    <td>
+      <input [(ngModel)]="sponsor.phone_number" placeholder="Enter phone" />
+    </td>
+    <td>
+      <input [(ngModel)]="sponsor.sponsor_type" placeholder="Enter Sponsor Type" />
+    </td>
+    <td><input [(ngModel)]="sponsor.notes" placeholder="Enter Notes" />
+    <td>
+      <button (click)="updateSponsor(sponsor.name, sponsor.contact_person, sponsor.email, sponsor.phone_number, sponsor.notes, sponsor.sponsor_id)">Update</button>
+    </td>
+
   </tr>
   </tbody>
 </table>
